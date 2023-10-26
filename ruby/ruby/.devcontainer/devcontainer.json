@@ -1,0 +1,25 @@
+{
+  "name": "ruby-demo",
+  "image": "ruby-demo:latest",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "runArgs": [
+    "--name=ruby-demo",
+    "--tty"
+  ],
+  "postStartCommand": "sh .devcontainer/start.sh",
+  "shutdownAction": "stopContainer",
+  "customizations": {
+		"vscode": {
+			"settings": {
+        "editor.rulers": [80, 100, 120]
+      },
+			"extensions": [
+        "misogi.ruby-rubocop",
+        "castwide.solargraph"
+      ]
+		}
+  }
+}
